@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "WA-Focus — WhatsApp Sidebar Toggle",
+  "version": "1.0.0",
+  "description": "Toggle sidebar visibility and blur sidebar content on WhatsApp Web for distraction-free, full-width messaging.",
+  "permissions": ["storage", "activeTab"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wa-focus@extension",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["storage.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
